@@ -3,6 +3,12 @@ def word_count(text: str) -> int:
 
 def char_frequencies(text: str) -> dict[str, int]:
     """Count of each character, ignoring whitespace and case."""
+    frequencies = {}
+    for c in text.lower():
+        if not c.isspace():
+            frequencies[c] = frequencies.get(c, 0) + 1
+    return frequencies
+    
 
 def longest_word(text: str) -> str:
     """The longest token. Raises ValueError on empty input."""
